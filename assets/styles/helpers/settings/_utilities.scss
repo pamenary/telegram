@@ -1,0 +1,331 @@
+@import '../tools/_functions.sass';
+
+$utilities: () !default;
+$utilities: map-deep-merge(
+  (
+    // Display utilities
+      'overflow':
+      (
+        property: overflow,
+        values: auto hidden visible,
+      ),
+    'overflow-x': (
+      property: overflow-x,
+      values: auto hidden,
+    ),
+    'overflow-y': (
+      property: overflow-y,
+      values: auto hidden,
+    ),
+    'display': (
+      responsive: false,
+      print: false,
+      property: display,
+      class: d,
+      values: none inline inline-block block table table-row table-cell flex
+        inline-flex,
+    ),
+    'float': (
+      responsive: false,
+      print: false,
+      property: float,
+      class: float,
+      values: none left right,
+    ),
+    // Flex utilities
+      'flex':
+      (
+        responsive: false,
+        property: flex,
+        values: (
+          fill: 1 1 auto,
+        ),
+      ),
+    'flex-direction': (
+      responsive: false,
+      property: flex-direction,
+      class: flex,
+      values: row column row-reverse column-reverse,
+    ),
+    'flex-grow': (
+      responsive: false,
+      property: flex-grow,
+      class: flex,
+      values: (
+        grow-0: 0,
+        grow-1: 1,
+      ),
+    ),
+    'flex-shrink': (
+      responsive: false,
+      property: flex-shrink,
+      class: flex,
+      values: (
+        shrink-0: 0,
+        shrink-1: 1,
+      ),
+    ),
+    'flex-wrap': (
+      responsive: false,
+      property: flex-wrap,
+      class: flex,
+      values: wrap nowrap wrap-reverse,
+    ),
+    'justify-content': (
+      responsive: false,
+      property: justify-content,
+      class: justify,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        space-between: space-between,
+        space-around: space-around,
+      ),
+    ),
+    'align-items': (
+      responsive: false,
+      property: align-items,
+      class: align,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+      ),
+    ),
+    'align-content': (
+      responsive: false,
+      property: align-content,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        space-between: space-between,
+        space-around: space-around,
+        stretch: stretch,
+      ),
+    ),
+    'align-self': (
+      responsive: false,
+      property: align-self,
+      values: (
+        auto: auto,
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+      ),
+    ),
+    'order': (
+      responsive: false,
+      property: order,
+      values: (
+        first: -1,
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        7: 7,
+        8: 8,
+        9: 9,
+        10: 10,
+        11: 11,
+        12: 12,
+        last: 13,
+      ),
+    ),
+    // Margin utilities
+      'margin':
+      (
+        responsive: false,
+        property: margin,
+        class: ma,
+        values:
+          map-merge(
+            $spacers,
+            (
+              auto: auto,
+            )
+          ),
+      ),
+    'margin-x': (
+      responsive: false,
+      property: margin-right margin-left,
+      class: mx,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-y': (
+      responsive: false,
+      property: margin-top margin-bottom,
+      class: my,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-top': (
+      responsive: false,
+      property: margin-top,
+      class: mt,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-right': (
+      responsive: false,
+      property: margin-right,
+      class: mr,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-bottom': (
+      responsive: false,
+      property: margin-bottom,
+      class: mb,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-left': (
+      responsive: false,
+      property: margin-left,
+      class: ml,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-start': (
+      responsive: false,
+      property: (
+        ltr: margin-left,
+        rtl: margin-right,
+      ),
+      class: ms,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-end': (
+      responsive: false,
+      property: (
+        ltr: margin-right,
+        rtl: margin-left,
+      ),
+      class: me,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    // Padding utilities
+      'padding':
+      (
+        responsive: false,
+        property: padding,
+        class: pa,
+        values: $spacers,
+      ),
+    'padding-x': (
+      responsive: false,
+      property: padding-right padding-left,
+      class: px,
+      values: $spacers,
+    ),
+    'padding-y': (
+      responsive: false,
+      property: padding-top padding-bottom,
+      class: py,
+      values: $spacers,
+    ),
+    'padding-top': (
+      responsive: false,
+      property: padding-top,
+      class: pt,
+      values: $spacers,
+    ),
+    'padding-right': (
+      responsive: false,
+      property: padding-right,
+      class: pr,
+      values: $spacers,
+    ),
+    'padding-bottom': (
+      responsive: false,
+      property: padding-bottom,
+      class: pb,
+      values: $spacers,
+    ),
+    'padding-left': (
+      responsive: false,
+      property: padding-left,
+      class: pl,
+      values: $spacers,
+    ),
+    'padding-start': (
+      responsive: false,
+      property: (
+        ltr: padding-left,
+        rtl: padding-right,
+      ),
+      class: ps,
+      values: $spacers,
+    ),
+    'padding-end': (
+      responsive: false,
+      property: (
+        ltr: padding-right,
+        rtl: padding-left,
+      ),
+      class: pe,
+      values: $spacers,
+    ),
+    // Text
+      'text-align':
+      (
+        responsive: true,
+        property: text-align,
+        class: text,
+        values: left right center justify start end,
+      )
+  ),
+  $utilities
+);

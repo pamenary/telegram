@@ -1,0 +1,20 @@
+body {
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+  background: $background-gradient;
+  overflow-y: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  outline: none !important;
+}
+
+.container {
+  width: 1140px;
+  margin: auto;
+}
